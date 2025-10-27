@@ -3,13 +3,13 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 
 const app = express();
 
-const target = "http://213.35.123.50";
+const target = "http://213.35.123.50:3002";
 
 app.use("/", createProxyMiddleware({
   target,
   changeOrigin: true,
   onProxyReq(proxyReq, req, res) {
-    proxyReq.setHeader("Host", "vendroom.ru");
+// //     proxyReq.setHeader("Host", "vendroom.ru");
     proxyReq.setHeader("X-Real-IP", req.headers["x-real-ip"] || req.socket.remoteAddress);
   },
 }));
