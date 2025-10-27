@@ -9,7 +9,7 @@ app.use("/", createProxyMiddleware({
   target,
   changeOrigin: true,
   onProxyReq(proxyReq, req, res) {
-    proxyReq.setHeader("Host", req.headers.host);
+    proxyReq.setHeader("Host", "vendroom.ru");
     proxyReq.setHeader("X-Real-IP", req.headers["x-real-ip"] || req.socket.remoteAddress);
   },
 }));
