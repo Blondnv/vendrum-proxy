@@ -3,7 +3,7 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 
 const app = express();
 
-const target = "http://161.118.194.6:3002";
+const target = "http://161.118.194.6:3003";
 
 app.use("/", createProxyMiddleware({
   target,
